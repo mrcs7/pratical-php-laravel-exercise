@@ -2,15 +2,22 @@
 
 namespace App\Http\Resources;
 
-use App\Repositories\Contracts\CountryJsonRepository;
+use App\Repositories\CountryJsonRepository;
 use App\Repositories\Contracts\CountryRepositoryInterface;
 use App\Services\CountriesRegexService;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CustomerListResource extends JsonResource
 {
+    /**
+     * @var CountriesRegexService
+     */
     private CountriesRegexService $countriesRegexService;
 
+    /**
+     * CustomerListResource constructor.
+     * @param $resource
+     */
     public function __construct($resource)
     {
         parent::__construct($resource);

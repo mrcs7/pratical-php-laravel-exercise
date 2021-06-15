@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Repositories\Contracts\CountryJsonRepository;
+use App\Repositories\CountryJsonRepository;
 use App\Repositories\Contracts\CountryRepositoryInterface;
 use App\Repositories\Contracts\CustomerRepositoryInterface;
 use App\Repositories\CustomerEloquentRepository;

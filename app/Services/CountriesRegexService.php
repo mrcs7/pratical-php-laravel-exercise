@@ -8,13 +8,24 @@ use App\Repositories\Contracts\CountryRepositoryInterface;
 
 class CountriesRegexService
 {
+    /**
+     * @var CountryRepositoryInterface
+     */
     public CountryRepositoryInterface $countryRepository;
 
+    /**
+     * CountriesRegexService constructor.
+     * @param CountryRepositoryInterface $countryRepository
+     */
     public function __construct(CountryRepositoryInterface $countryRepository)
     {
         $this->countryRepository = $countryRepository;
     }
 
+    /**
+     * @param $phoneNumber
+     * @return array
+     */
     public function getCountryByPhoneNumber($phoneNumber)
     {
         $codes = $this->countryRepository->listCountryCodes();
@@ -27,6 +38,11 @@ class CountriesRegexService
         }
     }
 
+    /**
+     * @param $phoneNumber
+     * @param $countryRegex
+     * @return false|int
+     */
     public function validateNumber($phoneNumber,$countryRegex)
     {
         $countryRegex="/".$countryRegex."/";

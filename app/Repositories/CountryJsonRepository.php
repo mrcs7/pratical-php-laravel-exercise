@@ -1,8 +1,10 @@
 <?php
 
 
-namespace App\Repositories\Contracts;
+namespace App\Repositories;
 
+
+use App\Repositories\Contracts\CountryRepositoryInterface;
 
 class CountryJsonRepository implements CountryRepositoryInterface
 {

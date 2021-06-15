@@ -28,6 +28,8 @@ class CustomerController extends Controller
     }
 
     /**
+     * List Customer Endpoint
+     *
      * @return mixed
      */
     public function index(CustomerListRequest $request)

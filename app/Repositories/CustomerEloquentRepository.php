@@ -9,15 +9,31 @@ use App\Repositories\Contracts\CountryRepositoryInterface;
 
 class CustomerEloquentRepository implements Contracts\CustomerRepositoryInterface
 {
+    /**
+     * @var Customer
+     */
     private Customer $model;
+
+    /**
+     * @var CountryRepositoryInterface
+     */
     private CountryRepositoryInterface $countryRepository;
 
+    /**
+     * CustomerEloquentRepository constructor.
+     * @param Customer $customer
+     * @param CountryRepositoryInterface $countryRepository
+     */
     public function __construct(Customer $customer,CountryRepositoryInterface $countryRepository)
     {
         $this->model = $customer;
         $this->countryRepository = $countryRepository;
     }
 
+    /**
+     * @param array $params
+     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     */
     public function listCustomers(array $params)
     {
         $query = $this->model->newQuery();

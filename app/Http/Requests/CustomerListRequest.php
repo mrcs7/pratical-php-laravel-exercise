@@ -46,6 +46,9 @@ class CustomerListRequest extends FormRequest
         }
     }
 
+    /**
+     * Prepare For Validation (Alter values before validation)
+     */
     protected function prepareForValidation()
     {
         $request = $this->request->all();
